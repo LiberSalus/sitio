@@ -1,0 +1,17 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: rgb(75, 75, 75);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cntLogo{
+    width: 20%;
+    margin-left: 5%;
+    & img {width: 100%;}
+}
