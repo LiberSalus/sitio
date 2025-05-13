@@ -21,7 +21,17 @@ Promise.all([
   loadHTML('nav-placeholder', '../html/componentes/nav.html'),
   loadHTML('footer-placeholder', '../html/componentes/footer.html')
 ]).then(() => {
-  //  scripts que dependan del nav o footer ya cargados
+  document.querySelector('.btnMenu').addEventListener('click', () => {
+    document.querySelector('.menu').classList.toggle('active');
+  });
+
+  document.querySelectorAll('.despliega').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      const parent = item.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
   
   initMenuResponsive();
 });
