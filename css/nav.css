@@ -1,11 +1,14 @@
 .cntMenu {
   background-color: #ffffff;
-  box-shadow: 1px 1px 5px (0,0,0,0.5);
-  
+  width: 100%;
+  display: flex;
   font-family: sans-serif;
+  justify-content: end;
+  align-items: center;
 }
 
 .menu {
+  
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +27,15 @@
   text-decoration: none;
 }
 
+.subMenu {
+  
+}
+
+.despliega {
+  font-weight: 700;
+  color: #0A4789;
+  font-size: 1rem;
+}
 .subMenu ul {
   display: none;
   position: absolute;
@@ -35,12 +47,20 @@
   left: 0;
   width: 250px;
   z-index: 1000;
+  transition: display 0.3s ease;
 }
 
 .subMenu:hover ul {
   display: block;
 }
-
+.subMenu li a {
+  
+}
+.subMenu li a:hover {
+  
+  background-color: #0A4789;
+  color: white
+}
 .btnMenu {
   display: none;
   background: none;
@@ -51,11 +71,41 @@
   cursor: pointer;
 }
 
+button:not(.btnMenu) {
+  margin-left: 3rem;
+  appearance: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  background-color: #0A4789;
+  color: white;
+  transform: translateY(-10px);
+  transition: outline 0.2s ease, background-color 0.2s ease ;
+  min-width: 147px;
+  max-width: 147px;
+}
+
+button:hover:not(.btnMenu) {
+  
+  background-color: white;
+  outline: 2px solid #0A4789;
+  color: #0A4789;
+}
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
+  .cntMenu {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
   .menu {
     flex-direction: column;
     display: none;
+    align-items: end;
+    border: 2px dashed red;
   }
 
   .menu.active {
@@ -65,17 +115,24 @@
   .subMenu ul {
     position: static;
   }
-
+  
   .btnMenu {
     display: block;
   }
-
+  
   .subMenu ul {
     display: none;
     flex-direction: column;
   }
-
+  
   .subMenu.active ul {
     display: flex;
+    align-items: end;
   }
+  #registro,
+  #inicio {
+    display: none;
+  }
+
 }
+

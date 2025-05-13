@@ -18,8 +18,8 @@ function loadHTML(id, url) {
 
 // Carga nav y footer
 Promise.all([
-  loadHTML('nav-placeholder', '../html/componentes/nav.html'),
-  loadHTML('footer-placeholder', '../html/componentes/footer.html')
+  loadHTML('nav-placeholder', '/html/componentes/nav.html'),
+  loadHTML('footer-placeholder', '/html/componentes/footer.html')
 ]).then(() => {
   document.querySelector('.btnMenu').addEventListener('click', () => {
     document.querySelector('.menu').classList.toggle('active');
